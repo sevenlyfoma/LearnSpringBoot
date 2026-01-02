@@ -1,5 +1,5 @@
 spring init --group-id=com.example --artifact-id=demo \
 --package-name=com.example.demo \
 --build=maven --java-version=25 \
---dependency=web \
+--d=web \
 demo
