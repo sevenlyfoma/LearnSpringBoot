@@ -3,3 +3,10 @@ spring init --group-id=com.example --artifact-id=demo \
 --build=maven --java-version=25 \
 --d=web \
 demo
+
+
+cd demo
+./mvnw test
+
+cd demo
+./mvnw spring-boot:run
