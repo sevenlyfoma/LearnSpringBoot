@@ -1,4 +1,4 @@
-//https://www.w3schools.com/REACT/react_jsx_if_statements.asp
+//https://www.w3schools.com/REACT/react_components.asp
 
 function MultByFive(num) {
     return num * 5
@@ -57,6 +57,10 @@ function JsxDemo() {
 
     const attrCSS = <h1 style={mystyles}>Attribute changed my CSS</h1>
 
+    const x = 5;
+
+    const ternExample =  <p>{(x) < 10 ? "Banana" : "Apple"}</p>
+
 
 
     //Nest jsx elements with curly braces
@@ -70,6 +74,7 @@ function JsxDemo() {
             {storedFunction}
             {disabledButton}
             {attrCSS}
+            {ternExample}
         </div>
     )
 
