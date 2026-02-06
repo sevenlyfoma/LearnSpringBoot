@@ -6,6 +6,7 @@ import JsxDemo from './JsxDemo.jsx'
 import ComponentsDemo from './ComponentsDemo.jsx'
 import PropsDemo from './PropsDemo.jsx'
 import EventsConditionalsDemo from './EventsConditionalsDemo.jsx'
+import HooksDemo from './HooksDemo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,8 @@ createRoot(document.getElementById('root')).render(
     <PropsDemo />
     <h1>Events and Conditionals Demo: </h1>
     <EventsConditionalsDemo />
+    <h1>Hooks Demo:</h1>
+    <HooksDemo />
   </StrictMode>,
 )
 // createRoot(document.getElementById('root')).render(
