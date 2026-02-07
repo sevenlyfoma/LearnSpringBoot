@@ -1,6 +1,6 @@
 //https://www.w3schools.com/REACT/react_useeffect.asp
 
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import { createRoot } from 'react-dom/client';
 
 function FavoriteColor() {
@@ -36,10 +36,23 @@ function FavoriteColor() {
   
 }
 
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  });
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
 function HooksDemo() {
      return (
             <div>
                  <FavoriteColor/>
+                 <Timer/>
             </div>
         )
 }
