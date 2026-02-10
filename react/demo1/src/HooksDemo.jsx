@@ -1,6 +1,6 @@
-//https://www.w3schools.com/REACT/react_useeffect.asp
+//https://www.w3schools.com/REACT/react_useref.asp
 
-import { useState, useEffect, useContext, createContext  } from 'react';
+import { useState, useEffect, useContext, createContext,  useRef  } from 'react';
 import { createRoot } from 'react-dom/client';
 
 function FavoriteColor() {
@@ -125,6 +125,27 @@ function Component3() {
   );
 }
 
+function RefDemo() {
+  const [inputValue, setInputValue] = useState("");
+  const count = useRef(0);
+
+  useEffect(() => {
+    count.current = count.current + 1;
+  });
+
+  return (
+    <>
+      <p>Type in the input field:</p>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h2>Render Count: {count.current}</h2>
+    </>
+  );
+}
+
 function HooksDemo() {
      return (
             <div>
@@ -134,6 +155,7 @@ function HooksDemo() {
                  <Counter/>
                  <Timer3/>
                  <Component1/>
+                 <RefDemo/>
             </div>
         )
 }
