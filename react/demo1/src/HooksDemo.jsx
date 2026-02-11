@@ -146,6 +146,44 @@ function RefDemo() {
   );
 }
 
+
+function RefDemoDom() {
+  const inputElement = useRef();
+
+  const focusInput = () => {
+    inputElement.current.focus();
+  };
+
+  return (
+    <>
+      <input type="text" ref={inputElement} />
+      <button onClick={focusInput}>Focus Input</button>
+    </>
+  );
+}
+
+function RefDemoState() {
+  const [inputValue, setInputValue] = useState("");
+  const previousInputValue = useRef("");
+
+  useEffect(() => {
+    previousInputValue.current = inputValue;
+  }, [inputValue]);
+
+  return (
+    <>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h2>Current Value: {inputValue}</h2>
+      <h2>Previous Value: {previousInputValue.current}</h2>
+    </>
+  );
+}
+
+
 function HooksDemo() {
      return (
             <div>
@@ -156,6 +194,8 @@ function HooksDemo() {
                  <Timer3/>
                  <Component1/>
                  <RefDemo/>
+                 <RefDemoDom/>
+                 <RefDemoState/>
             </div>
         )
 }
